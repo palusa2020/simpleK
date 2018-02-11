@@ -1,2 +1,4 @@
-io/home/GetData.class
+io/home/PersonConsumer.class
 io/home/PutData.class
+io/home/GetData.class
+io/home/Person.class
