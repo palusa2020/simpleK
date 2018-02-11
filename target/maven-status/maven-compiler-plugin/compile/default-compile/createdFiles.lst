@@ -1,4 +1,5 @@
 io/home/PersonConsumer.class
 io/home/PutData.class
+io/home/PersonStream.class
 io/home/GetData.class
 io/home/Person.class

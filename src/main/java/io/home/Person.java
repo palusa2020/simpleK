@@ -16,6 +16,7 @@ public static void main ( String [] args ){
 
  Producer<String, String> producer = new KafkaProducer<>(props);
      producer.send(new ProducerRecord<String, String>("my-topic", "PalUSA", "CA"));
+     producer.send(new ProducerRecord<String, String>("my-order", "PalUSA", "Currently Learning More Stuff"));
  producer.close();
 }
 }
