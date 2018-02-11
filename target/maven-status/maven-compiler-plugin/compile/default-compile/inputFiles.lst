@@ -1,5 +1,15 @@
+/home/gopal/simpleK/src/main/java/io/home/MyAvroProducer.java
+/home/gopal/simpleK/src/main/java/io/home/FooBar.java
+/home/gopal/simpleK/src/main/java/io/confluent/examples/connectandstreams/utils/SpecificAvroSerializer.java
+/home/gopal/simpleK/src/main/java/io/confluent/examples/connectandstreams/utils/GenericAvroSerde.java
+/home/gopal/simpleK/src/main/java/io/confluent/examples/connectandstreams/utils/GenericAvroDeserializer.java
+/home/gopal/simpleK/src/main/java/io/confluent/examples/connectandstreams/utils/SpecificAvroSerde.java
+/home/gopal/simpleK/src/main/java/io/home/PersonStream.java
+/home/gopal/simpleK/src/main/java/io/confluent/examples/connectandstreams/utils/SpecificAvroDeserializer.java
 /home/gopal/simpleK/src/main/java/io/home/PutData.java
 /home/gopal/simpleK/src/main/java/io/home/GetData.java
-/home/gopal/simpleK/src/main/java/io/home/PersonStream.java
+/home/gopal/simpleK/src/main/java/io/home/FooBarStream.java
+/home/gopal/simpleK/src/main/java/io/home/MyAvroConsumer.java
 /home/gopal/simpleK/src/main/java/io/home/PersonConsumer.java
+/home/gopal/simpleK/src/main/java/io/confluent/examples/connectandstreams/utils/GenericAvroSerializer.java
 /home/gopal/simpleK/src/main/java/io/home/Person.java

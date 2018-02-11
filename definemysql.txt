@@ -1,0 +1,64 @@
+<pre>
+
+~/simpleK$ confluent config jdbc_source_mysql_foobar_01 -d kafka-connect-jdbc-source-with-smt.json
+{
+  "name": "jdbc_source_mysql_foobar_01",
+  "config": {
+    "_comment": "---- Single Message Transforms ----",
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+    "connection.url": "jdbc:mysql://localhost:3306/test?user=webusr&password=webusr",
+    "table.whitelist": "foobar",
+    "mode": "timestamp",
+    "timestamp.column.name": "update_ts",
+    "validate.non.null": "false",
+    "topic.prefix": "mysql-",
+    "transforms": "createKey,extractInt",
+    "transforms.createKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
+    "transforms.createKey.fields": "c1",
+    "transforms.extractInt.type": "org.apache.kafka.connect.transforms.ExtractField$Key",
+    "transforms.extractInt.field": "c1",
+    "name": "jdbc_source_mysql_foobar_01"
+  },
+  "tasks": [],
+  "type": null
+}
+gopal@gopal-Inspiron-M5010:~/simpleK$ 
+
+
+~/simpleK$ kafka-topics --list --zookeeper localhost:2181
+MYTOPIC
+MYTOPIC1
+WordsWithCountsTopic
+__confluent.support.metrics
+__consumer_offsets
+_schemas
+connect-configs
+connect-offsets
+connect-statuses
+my-order
+my-topic
+mysql-foobar
+wordcount-lambda-example-Counts-changelog
+wordcount-lambda-example-Counts-repartition
+gopal@gopal-Inspiron-M5010:~/simpleK$ 
+
+
+List the values
+gopal@gopal-Inspiron-M5010:~/simpleK$ kafka-avro-console-consumer \
+> --bootstrap-server localhost:9092 \
+> --property schema.registry.url=http://localhost:8081 \
+> --property print.key=true \
+> --from-beginning \
+> --topic mysql-foobar
+1	{"c1":1,"c2":{"string":"foo"},"create_ts":1517775928000,"update_ts":1517775928000}
+2	{"c1":2,"c2":{"string":"bar"},"create_ts":1517792007000,"update_ts":1517792007000}
+3	{"c1":3,"c2":{"string":"lollo"},"create_ts":1517792157000,"update_ts":1517792157000}
+4	{"c1":4,"c2":{"string":"w"},"create_ts":1517792725000,"update_ts":1517792725000}
+5	{"c1":5,"c2":{"string":"w5"},"create_ts":1517794461000,"update_ts":1517794461000}
+1001	{"c1":1001,"c2":{"string":"deep learning"},"create_ts":1518328590000,"update_ts":1518328590000}
+
+</pre>

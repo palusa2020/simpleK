@@ -7,8 +7,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kafka-producer-example</name>
 	<description>Sample Appium tests using JUnit</description>
-	<dependencies>
 
+
+<dependencies>
 <!--Kafka dependencies-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
@@ -53,6 +54,12 @@
     <version>2.10.0</version>
     <type>pom</type>
 </dependency>
+
+            <dependency>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-connect-avro-converter</artifactId>
+                <version>4.0.0</version>
+            </dependency>
 
 	</dependencies>
 
@@ -108,6 +115,11 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+        <repository>
+            <id>confluent</id>
+            <name>Confluent</name>
+            <url>http://packages.confluent.io/maven/</url>
+        </repository>
 	</repositories>
 
 
